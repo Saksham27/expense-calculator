@@ -1,0 +1,51 @@
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 120rem;
+	height: 90vh;
+	transform: translate(-50%, -50%);
+	background-color: red;
+	border-radius: $corner;
+	display: flex;
+	justify-content: space-between;
+}
+
+.income-box {
+	background-color: $swatch_7;
+	width: 40%;
+	border-radius: $corner 0 0 $corner;
+}
+
+.output-box {
+	position: absolute;
+	left: 50%;
+	width: 40%;
+	height: 100%;
+	transform: translate(-50%);
+	background-color: #fff;
+	border-radius: $corner;
+}
+
+.expense-box {
+	background-color: #ff8789;
+	width: 40%;
+	border-radius: 0 $corner $corner 0;
+
+	&__heading {
+		width: 100%;
+		height: 20%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #f9676a;
+		border-radius: 0 $corner 0 0;
+
+		&--text {
+			font-size: 4rem;
+
+			padding-left: 10%;
+			text-transform: uppercase;
+		}
+	}
+}
