@@ -5,14 +5,13 @@
 	width: 120rem;
 	height: 90vh;
 	transform: translate(-50%, -50%);
-	background-color: red;
 	border-radius: $corner;
 	display: flex;
 	justify-content: space-between;
 }
 
 .income-box {
-	background-color: $swatch_7;
+	background-color: $color-income;
 	width: 40%;
 	border-radius: $corner;
 	display: flex;
@@ -27,7 +26,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: #f9676a;
+		background-color: $color-income-dark;
 
 		&--text {
 			font-size: 4rem;
@@ -42,7 +41,7 @@
 	width: 40%;
 	height: 100%;
 	transform: translate(-50%);
-	background-color: #fff;
+	background-color: $color-white;
 	border-radius: $corner;
 	display: flex;
 	flex-direction: column;
@@ -53,11 +52,11 @@
 		flex-basis: 60%;
 		flex-direction: column;
 		justify-content: space-around;
-		background-color: green;
+		background-color: $color-white;
 
 		&__date {
 			width: 40%;
-			background-color: yellow;
+			background-color: $color-grey-light;
 			align-self: flex-start;
 			flex-basis: 10%;
 			border-radius: 0 $corner $corner 0;
@@ -65,7 +64,7 @@
 
 		&__screen {
 			width: 60%;
-			background-color: yellow;
+			background: radial-gradient($color-lavender, $color-lavender, $color-white);
 			align-self: center;
 			flex-basis: 20%;
 			border-radius: 5rem;
@@ -74,7 +73,7 @@
 		&__total {
 			&--income {
 				width: 55%;
-				background-color: yellow;
+				background: linear-gradient(to right bottom, $color-income, $color-income, $color-white);
 				align-self: flex-start;
 				flex-basis: 15%;
 				border-radius: 0 $corner $corner 0;
@@ -82,7 +81,7 @@
 
 			&--expense {
 				width: 55%;
-				background-color: yellow;
+				background: linear-gradient(to right bottom, $color-white, $color-expense, $color-expense);
 				align-self: flex-end;
 				flex-basis: 15%;
 				border-radius: $corner 0 0 $corner;
@@ -121,7 +120,7 @@
 }
 
 .expense-box {
-	background-color: $swatch_7;
+	background-color: $color-expense;
 	width: 40%;
 	border-radius: $corner;
 	display: flex;
@@ -136,7 +135,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: #f9676a;
+		background-color: $color-expense-dark;
 
 		&--text {
 			font-size: 4rem;

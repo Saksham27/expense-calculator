@@ -11,7 +11,7 @@ body {
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
   background-color: #eceaf1;
-  color: #fff; }
+  color: #ffffff; }
 
 .container {
   position: absolute;
@@ -20,7 +20,6 @@ body {
   width: 120rem;
   height: 90vh;
   transform: translate(-50%, -50%);
-  background-color: red;
   border-radius: 3rem;
   display: flex;
   justify-content: space-between; }
@@ -40,7 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9676a; }
+    background-color: #122a95; }
     .income-box__heading--text {
       font-size: 4rem;
       text-transform: uppercase; }
@@ -51,7 +50,7 @@ body {
   width: 40%;
   height: 100%;
   transform: translate(-50%);
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 3rem;
   display: flex;
   flex-direction: column;
@@ -61,28 +60,28 @@ body {
     flex-basis: 60%;
     flex-direction: column;
     justify-content: space-around;
-    background-color: green; }
+    background-color: #ffffff; }
     .output-box__display__date {
       width: 40%;
-      background-color: yellow;
+      background-color: #eceaf1;
       align-self: flex-start;
       flex-basis: 10%;
       border-radius: 0 3rem 3rem 0; }
     .output-box__display__screen {
       width: 60%;
-      background-color: yellow;
+      background: radial-gradient(#f8d7ad, #f8d7ad, #ffffff);
       align-self: center;
       flex-basis: 20%;
       border-radius: 5rem; }
     .output-box__display__total--income {
       width: 55%;
-      background-color: yellow;
+      background: linear-gradient(to right bottom, #2d429d, #2d429d, #ffffff);
       align-self: flex-start;
       flex-basis: 15%;
       border-radius: 0 3rem 3rem 0; }
     .output-box__display__total--expense {
       width: 55%;
-      background-color: yellow;
+      background: linear-gradient(to right bottom, #ffffff, #ff8789, #ff8789);
       align-self: flex-end;
       flex-basis: 15%;
       border-radius: 3rem 0 0 3rem; }
@@ -109,7 +108,7 @@ body {
         border-radius: 3rem; }
 
 .expense-box {
-  background-color: #2d429d;
+  background-color: #ff8789;
   width: 40%;
   border-radius: 3rem;
   display: flex;
