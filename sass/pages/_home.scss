@@ -14,7 +14,26 @@
 .income-box {
 	background-color: $swatch_7;
 	width: 40%;
-	border-radius: $corner 0 0 $corner;
+	border-radius: $corner;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow: hidden;
+
+	&__heading {
+		width: 85%;
+		flex-basis: 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #f9676a;
+
+		&--text {
+			font-size: 4rem;
+			text-transform: uppercase;
+		}
+	}
 }
 
 .output-box {
@@ -25,21 +44,99 @@
 	transform: translate(-50%);
 	background-color: #fff;
 	border-radius: $corner;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	&__display {
+		display: flex;
+		flex-basis: 60%;
+		flex-direction: column;
+		justify-content: space-around;
+		background-color: green;
+
+		&__date {
+			width: 40%;
+			background-color: yellow;
+			align-self: flex-start;
+			flex-basis: 10%;
+			border-radius: 0 $corner $corner 0;
+		}
+
+		&__screen {
+			width: 60%;
+			background-color: yellow;
+			align-self: center;
+			flex-basis: 20%;
+			border-radius: 5rem;
+		}
+
+		&__total {
+			&--income {
+				width: 55%;
+				background-color: yellow;
+				align-self: flex-start;
+				flex-basis: 15%;
+				border-radius: 0 $corner $corner 0;
+			}
+
+			&--expense {
+				width: 55%;
+				background-color: yellow;
+				align-self: flex-end;
+				flex-basis: 15%;
+				border-radius: $corner 0 0 $corner;
+			}
+		}
+	}
+
+	&__entry {
+		display: flex;
+		flex-basis: 40%;
+		padding: 0 5rem;
+		flex-direction: column;
+		justify-content: space-around;
+
+		&__button {
+			display: flex;
+			justify-content: flex-start;
+
+			&--income {
+				padding: 0.4rem 1.5rem;
+				font-size: 1.3rem;
+				color: #000;
+				border: 1px solid #000;
+				border-radius: $corner;
+			}
+
+			&--expense {
+				padding: 0.4rem 1.5rem;
+				font-size: 1.3rem;
+				color: #000;
+				border: 1px solid #000;
+				border-radius: $corner;
+			}
+		}
+	}
 }
 
 .expense-box {
-	background-color: #ff8789;
+	background-color: $swatch_7;
 	width: 40%;
-	border-radius: 0 $corner $corner 0;
+	border-radius: $corner;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+	overflow: hidden;
 
 	&__heading {
-		width: 100%;
-		height: 20%;
+		width: 85%;
+		flex-basis: 20%;
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
 		background-color: #f9676a;
-		border-radius: 0 $corner 0 0;
 
 		&--text {
 			font-size: 4rem;

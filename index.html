@@ -12,21 +12,59 @@
 
 <body>
     <div class="container">
+        <!-- INCOME Left side column -->
         <div class="income-box">
             <div class="income-box__heading">
                 <h1 class="income-box__heading--text">income</h1>
             </div>
-            <div class="income-box__items">hello</div>
+            <div class="income-box__items">
+                <div class="income-box__items-1">
+                    <span class="income-box__items-1--description">Milk</span>
+                    <span class="income-box__items-1--value">200</span>
+                </div>
+            </div>
         </div>
-        <div class="output-box"></div>
+
+        <!-- OUTPUT Middle column -->
+        <div class="output-box">
+            <div class="output-box__display">
+                <div class="output-box__display__date">6 Nov 2019</div>
+                <div class="output-box__display__screen">+12000</div>
+                <div class="output-box__display__total--income">20000</div>
+                <div class="output-box__display__total--expense">8000</div>
+            </div>
+
+            <div class="output-box__entry">
+                <div class="output-box__entry__button">
+                    <input type="radio" name="button" id="income-button" value="income">
+                    <label class="output-box__entry__button--income" for="income-button">Income</label>
+
+                    <input type="radio" name="button" id="expense-button" value="expense">
+                    <label class="output-box__entry__button--expense" for="expense-button">
+                        Expense
+                    </label>
+                </div>
+                <input type="text" class="output-box__entry__input-name" placeholder="Add description" id="input-description">
+                <input type="number" class="output-box__entry__input-value" placeholder="Value" id="input-value">
+                <button class="output-box__entry__submit" id="submit-button">Submit</button>
+            </div>
+        </div>
+
+        <!-- EXPENSE Right column -->
         <div class="expense-box">
             <div class="expense-box__heading">
                 <h1 class="expense-box__heading--text">expenses</h1>
             </div>
-            <div class="expense-box__items">bye</div>
+            <div class="expense-box__items">
+                <div class="expense-box__items-1">
+                    <span class="expense-box__items-1--description">Milk</span>
+                    <span class="expense-box__items-1--value">200</span>
+                </div>
+            </div>
         </div>
     </div>
 
+    <script src="app.js"></script>
 </body>
 
 </html>

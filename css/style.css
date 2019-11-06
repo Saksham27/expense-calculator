@@ -28,7 +28,22 @@ body {
 .income-box {
   background-color: #2d429d;
   width: 40%;
-  border-radius: 3rem 0 0 3rem; }
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden; }
+  .income-box__heading {
+    width: 85%;
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9676a; }
+    .income-box__heading--text {
+      font-size: 4rem;
+      text-transform: uppercase; }
 
 .output-box {
   position: absolute;
@@ -37,20 +52,78 @@ body {
   height: 100%;
   transform: translate(-50%);
   background-color: #fff;
-  border-radius: 3rem; }
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+  .output-box__display {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: green; }
+    .output-box__display__date {
+      width: 40%;
+      background-color: yellow;
+      align-self: flex-start;
+      flex-basis: 10%;
+      border-radius: 0 3rem 3rem 0; }
+    .output-box__display__screen {
+      width: 60%;
+      background-color: yellow;
+      align-self: center;
+      flex-basis: 20%;
+      border-radius: 5rem; }
+    .output-box__display__total--income {
+      width: 55%;
+      background-color: yellow;
+      align-self: flex-start;
+      flex-basis: 15%;
+      border-radius: 0 3rem 3rem 0; }
+    .output-box__display__total--expense {
+      width: 55%;
+      background-color: yellow;
+      align-self: flex-end;
+      flex-basis: 15%;
+      border-radius: 3rem 0 0 3rem; }
+  .output-box__entry {
+    display: flex;
+    flex-basis: 40%;
+    padding: 0 5rem;
+    flex-direction: column;
+    justify-content: space-around; }
+    .output-box__entry__button {
+      display: flex;
+      justify-content: flex-start; }
+      .output-box__entry__button--income {
+        padding: 0.4rem 1.5rem;
+        font-size: 1.3rem;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 3rem; }
+      .output-box__entry__button--expense {
+        padding: 0.4rem 1.5rem;
+        font-size: 1.3rem;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 3rem; }
 
 .expense-box {
-  background-color: #ff8789;
+  background-color: #2d429d;
   width: 40%;
-  border-radius: 0 3rem 3rem 0; }
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  overflow: hidden; }
   .expense-box__heading {
-    width: 100%;
-    height: 20%;
+    width: 85%;
+    flex-basis: 20%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #f9676a;
-    border-radius: 0 3rem 0 0; }
+    align-items: center;
+    background-color: #f9676a; }
     .expense-box__heading--text {
       font-size: 4rem;
       padding-left: 10%;
