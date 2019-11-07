@@ -136,7 +136,8 @@ body {
       justify-content: flex-start;
       flex-basis: 10%;
       margin: 0 0 1rem 0;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-weight: 900; }
       .output-box__entry__button--income {
         padding: 0.5rem 1rem;
         font-size: 1.2rem;
