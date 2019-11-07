@@ -33,6 +33,33 @@
 			text-transform: uppercase;
 		}
 	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 80%;
+		width: 70%;
+		align-self: flex-start;
+
+		&-1 {
+			flex-basis: 8%;
+			background-color: $color-income-dark;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 1%;
+			width: 100%;
+			padding: 0 $padding-small;
+			font-size: 1.5rem;
+			border-radius: 0 $corner $corner 0;
+
+			&--description {
+			}
+
+			&--value {
+			}
+		}
+	}
 }
 
 .output-box {
@@ -60,31 +87,54 @@
 			align-self: flex-start;
 			flex-basis: 10%;
 			border-radius: 0 $corner $corner 0;
+			color: $color-grey-dark;
+			padding: 0 5rem;
+			display: flex;
+			align-items: center;
+			font-size: 1.2rem;
 		}
 
 		&__screen {
 			width: 60%;
-			background: radial-gradient($color-lavender, $color-lavender, $color-white);
+			background: $color-lavender;
 			align-self: center;
 			flex-basis: 20%;
 			border-radius: 5rem;
+			color: $color-grey-dark;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 4rem;
+			font-weight: 300;
 		}
 
 		&__total {
 			&--income {
 				width: 55%;
-				background: linear-gradient(to right bottom, $color-income, $color-income, $color-white);
+				background: linear-gradient(to right, $color-income, $color-income-dark);
 				align-self: flex-start;
 				flex-basis: 15%;
 				border-radius: 0 $corner $corner 0;
+				padding: 0 5rem;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				font-size: 2rem;
+				letter-spacing: 0.2rem;
 			}
 
 			&--expense {
 				width: 55%;
-				background: linear-gradient(to right bottom, $color-white, $color-expense, $color-expense);
+				background: linear-gradient(to right, $color-expense-dark, $color-expense);
 				align-self: flex-end;
 				flex-basis: 15%;
 				border-radius: $corner 0 0 $corner;
+				padding: 0 5rem;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				font-size: 2rem;
+				letter-spacing: 0.2rem;
 			}
 		}
 	}
@@ -94,26 +144,84 @@
 		flex-basis: 40%;
 		padding: 0 5rem;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: center;
 
 		&__button {
 			display: flex;
 			justify-content: flex-start;
+			flex-basis: 10%;
+			margin: 0 0 1rem 0;
+			text-transform: uppercase;
 
 			&--income {
-				padding: 0.4rem 1.5rem;
-				font-size: 1.3rem;
-				color: #000;
-				border: 1px solid #000;
+				padding: 0.5rem 1rem;
+				font-size: 1.2rem;
+				color: $color-income-dark;
+				border: 1px solid $color-income-dark;
 				border-radius: $corner;
+				margin-right: 2rem;
+				transition: all 0.2s;
 			}
 
 			&--expense {
-				padding: 0.4rem 1.5rem;
-				font-size: 1.3rem;
-				color: #000;
-				border: 1px solid #000;
+				padding: 0.5rem 1rem;
+				font-size: 1.2rem;
+				color: $color-expense-dark;
+				border: 1px solid $color-expense-dark;
 				border-radius: $corner;
+				transition: all 0.2s;
+			}
+
+			& input {
+				display: none;
+			}
+
+			& input:checked + &--income {
+				background-color: $color-income-dark;
+				color: $color-white;
+			}
+
+			& input:checked + &--expense {
+				background-color: $color-expense-dark;
+				color: $color-white;
+			}
+		}
+
+		&__input-name {
+			flex-basis: 15%;
+			font-size: 1.3rem;
+			margin: 0 0 1rem 0;
+			padding: 0.5rem 1rem;
+			border-radius: $corner;
+			border: 1px solid $color-grey-medium;
+			outline: none;
+		}
+
+		&__input-value {
+			flex-basis: 15%;
+			font-size: 1.3rem;
+			margin: 0 0 1rem 0;
+			padding: 0.5rem 1rem;
+			border-radius: $corner;
+			border: 1px solid $color-grey-medium;
+			outline: none;
+		}
+
+		&__submit {
+			flex-basis: 15%;
+			width: 30%;
+			align-self: flex-end;
+			text-transform: uppercase;
+			border: 1px solid $color-button;
+			background-color: $color-white;
+			color: $color-button;
+			border-radius: $corner;
+			outline: none;
+			transition: all 0.2s;
+
+			&:hover {
+				background-color: $color-button;
+				color: $color-white;
 			}
 		}
 	}
@@ -142,6 +250,33 @@
 
 			padding-left: 10%;
 			text-transform: uppercase;
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 80%;
+		width: 70%;
+		align-self: flex-end;
+
+		&-1 {
+			flex-basis: 8%;
+			background-color: $color-expense-dark;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 1%;
+			width: 100%;
+			padding: 0 $padding-small;
+			font-size: 1.5rem;
+			border-radius: $corner 0 0 $corner;
+
+			&--description {
+			}
+
+			&--value {
+			}
 		}
 	}
 }

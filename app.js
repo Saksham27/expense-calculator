@@ -6,24 +6,24 @@ var budgetController = (function() {
 // UI Controller
 var UIController = (function() {
 	var DOMStrings = {
-		inputType : (function() {
-			var x;
-			if (document.getElementById('income-button').checked) {
-				x = 'income-button';
-			} else if (document.getElementById('expense-button').chcked) {
-				x = 'expense-button';
-			}
-			return x;
-		})()
+		inputTypeIncome  : document.getElementById('income-button').id,
+		inputTypeExpense : document.getElementById('expense-button').id,
+		inputDescription : document.getElementById('input-description').id,
+		inputValue       : document.getElementById('input-value').id
 	};
-	console.log(DOMStrings.inputType);
 
 	return {
 		getInput : function() {
 			return {
-				type        : document.getElementById(DOMStrings.inputType).value,
-				description : document.getElementById('input-description').value,
-				value       : document.getElementById('input-value').value
+				type        : (function() {
+					if (document.getElementById(DOMStrings.inputTypeIncome).checked) {
+						return document.getElementById(DOMStrings.inputTypeIncome).value;
+					} else if (document.getElementById(DOMStrings.inputTypeExpense).checked) {
+						return document.getElementById(DOMStrings.inputTypeExpense).value;
+					}
+				})(),
+				description : document.getElementById(DOMStrings.inputDescription).value,
+				value       : document.getElementById(DOMStrings.inputValue).value
 			};
 		}
 	};
@@ -48,5 +48,6 @@ var controller = (function(budgetCtrl, UICtrl) {
 		if (event.keyCode === 13 || event.which === 13) {
 			ctrlAddItem();
 		}
+		console.log(event.keyCode);
 	});
 })(budgetController, UIController);
