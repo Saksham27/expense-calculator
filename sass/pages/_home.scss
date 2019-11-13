@@ -35,13 +35,17 @@
 	}
 
 	&__items {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		flex-basis: 80%;
 		width: 70%;
 		align-self: flex-start;
+		overflow: auto;
+		cursor: default;
 
 		&-1 {
+			position: relative;
 			flex-basis: 8%;
 			background-color: $color-income-dark;
 			display: flex;
@@ -49,7 +53,7 @@
 			align-items: center;
 			margin-top: 1%;
 			width: 100%;
-			padding: 0 $padding-small;
+			padding: 0.5rem $padding-small;
 			font-size: 1.5rem;
 			border-radius: 0 $corner $corner 0;
 
@@ -57,6 +61,29 @@
 			}
 
 			&--value {
+				transition: all 0.4s;
+			}
+
+			&--delete {
+				position: absolute;
+				top: 55%;
+				right: 5%;
+				transform: translateY(-50%);
+				font-size: 2rem;
+				opacity: 0;
+				transition: all 0.4s;
+			}
+
+			&:hover {
+				background-color: $color-income-darkest;
+			}
+
+			&:hover &--value {
+				transform: translateX(-3rem);
+			}
+
+			&:hover &--delete {
+				opacity: 1;
 			}
 		}
 	}
@@ -153,7 +180,7 @@
 			margin: 0 0 1rem 0;
 			text-transform: uppercase;
 			font-weight: 900;
-			
+
 			&--income {
 				padding: 0.5rem 1rem;
 				font-size: 1.2rem;
@@ -260,8 +287,10 @@
 		flex-basis: 80%;
 		width: 70%;
 		align-self: flex-end;
+		overflow: auto;
 
 		&-1 {
+			position: relative;
 			flex-basis: 8%;
 			background-color: $color-expense-dark;
 			display: flex;
@@ -269,7 +298,7 @@
 			align-items: center;
 			margin-top: 1%;
 			width: 100%;
-			padding: 0 $padding-small;
+			padding: 0.5rem $padding-small;
 			font-size: 1.5rem;
 			border-radius: $corner 0 0 $corner;
 
@@ -277,6 +306,29 @@
 			}
 
 			&--value {
+				transition: all 0.4s;
+			}
+
+			&--delete {
+				position: absolute;
+				top: 55%;
+				right: 5%;
+				transform: translateY(-50%);
+				font-size: 2rem;
+				opacity: 0;
+				transition: all 0.4s;
+			}
+
+			&:hover {
+				background-color: $color-expense-darkest;
+			}
+
+			&:hover &--value {
+				transform: translateX(-3rem);
+			}
+
+			&:hover &--delete {
+				opacity: 1;
 			}
 		}
 	}

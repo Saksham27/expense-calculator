@@ -18,10 +18,11 @@
                 <h1 class="income-box__heading--text">income</h1>
             </div>
             <div class="income-box__items">
-                <div class="income-box__items-1">
+                <!-- <div class="income-box__items-1" id="income-1">
                     <span class="income-box__items-1--description">Milk</span>
                     <span class="income-box__items-1--value">200</span>
-                </div>
+                    <span class="income-box__items-1--delete"><ion-icon name="trash"></ion-icon></span>
+                </div> -->
             </div>
         </div>
 
@@ -36,13 +37,11 @@
 
             <div class="output-box__entry">
                 <div class="output-box__entry__button">
-                    <input type="radio" name="button" id="income-button" class="input-button" value="income">
+                    <input type="radio" name="button" id="income-button" class="input-button" value="income" checked>
                     <label class="output-box__entry__button--income" for="income-button">Income</label>
 
                     <input type="radio" name="button" id="expense-button" class="input-button" value="expense">
-                    <label class="output-box__entry__button--expense" for="expense-button">
-                        Expense
-                    </label>
+                    <label class="output-box__entry__button--expense" for="expense-button">Expense</label>
                 </div>
                 <input type="text" class="output-box__entry__input-name" placeholder="Add description" id="input-description">
                 <input type="number" class="output-box__entry__input-value" placeholder="Value" id="input-value">
@@ -56,18 +55,18 @@
                 <h1 class="expense-box__heading--text">expenses</h1>
             </div>
             <div class="expense-box__items">
-                <div class="expense-box__items-1">
+                <!-- <div class="expense-box__items-1" id="expense-1">
                     <span class="expense-box__items-1--description">Milk</span>
                     <span class="expense-box__items-1--value">200</span>
                 </div>
-                <div class="expense-box__items-1">
+                <div class="expense-box__items-1" id="expense-2">
                     <span class="expense-box__items-1--description">Milk</span>
                     <span class="expense-box__items-1--value">200</span>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
-
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="app.js"></script>
 </body>
 
