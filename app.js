@@ -61,12 +61,14 @@ var UIController = (function() {
 	var DOMStrings = {
 		inputTypeIncome  : document.getElementById('income-button').id,
 		inputTypeExpense : document.getElementById('expense-button').id,
-		inputDescription : document.getElementById('input-description').id,
-		inputValue       : document.getElementById('input-value').id,
+		inputDescription : document.getElementById('input-description').className,
+		inputValue       : document.getElementById('input-value').className,
 		inputButton      : document.getElementById('submit-button').id,
 		incomeContainer  : '.income-box__items',
 		expenseContainer : '.expense-box__items'
 	};
+
+	console.log(DOMStrings.inputDescription, DOMStrings.inputValue);
 
 	return {
 		getInput      : function() {
@@ -78,8 +80,8 @@ var UIController = (function() {
 						return document.getElementById(DOMStrings.inputTypeExpense).value; // will be expense
 					}
 				})(),
-				description : document.getElementById(DOMStrings.inputDescription).value,
-				value       : document.getElementById(DOMStrings.inputValue).value
+				description : document.querySelector('.' + DOMStrings.inputDescription).value,
+				value       : document.querySelector('.' + DOMStrings.inputValue).value
 			};
 		},
 
@@ -108,8 +110,17 @@ var UIController = (function() {
 		},
 
 		clearFields   : function() {
-			var fields;
-			fields = document.querySelectorAll(DOMStrings.inputDescription + ',' + DOMStrings.inputValue);
+			var fields, fieldsArr;
+			fields = document.querySelectorAll('.' + DOMStrings.inputDescription + ', ' + '.' + DOMStrings.inputValue);
+
+			fieldsArr = Array.prototype.slice.call(fields);
+
+			fieldsArr.forEach(function(current, index, array) {
+				current.value = '';
+				console.log(current.value);
+			});
+
+			fieldsArr[0].focus();
 		},
 
 		getDOMStrings : function() {
@@ -144,8 +155,12 @@ var controller = (function(budgetCtrl, UICtrl) {
 
 		// 3. Add the item to UI controller
 		UICtrl.addListItem(newItem, input.type);
-		// 4. Calculate the budget
-		// 5. Displplay the buget on UI
+
+		// 4. Clear the fields.
+		UICtrl.clearFields();
+
+		// 5. Calculate the budget
+		// 6. Displplay the buget on UI
 	};
 
 	return {
