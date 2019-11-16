@@ -6,6 +6,9 @@
 html {
   font-size: 10px; }
 
+input:focus {
+  border: 2px solid #aba5b4; }
+
 body {
   position: relative;
   height: 100vh;
@@ -245,6 +248,8 @@ body {
       border-radius: 3rem;
       outline: none;
       transition: all 0.2s; }
+      .output-box__entry__submit:focus {
+        border: 2px solid #00a3ee; }
       .output-box__entry__submit:hover {
         background-color: #1ba9e9;
         color: #ffffff; }

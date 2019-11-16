@@ -308,6 +308,9 @@
 			outline: none;
 			transition: all 0.2s;
 
+			&:focus {
+				border: 2px solid $color-button-dark;
+			}
 			&:hover {
 				background-color: $color-button;
 				color: $color-white;
