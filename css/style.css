@@ -66,8 +66,14 @@ body {
       width: 100%;
       padding: 0.5rem 3rem;
       font-size: 1.5rem;
-      border-radius: 0 3rem 3rem 0; }
+      border-radius: 0 3rem 3rem 0;
+      animation: slide-up 0.4s ease; }
+      .income-box__items-1--description {
+        max-width: 50%;
+        display: inline-block;
+        overflow-wrap: break-word; }
       .income-box__items-1--value {
+        max-width: 45%;
         transition: all 0.4s; }
       .income-box__items-1--delete {
         position: absolute;
@@ -292,8 +298,14 @@ body {
       width: 100%;
       padding: 0.5rem 3rem;
       font-size: 1.5rem;
-      border-radius: 3rem 0 0 3rem; }
+      border-radius: 3rem 0 0 3rem;
+      animation: slide-up 0.4s ease; }
+      .expense-box__items-1--description {
+        max-width: 50%;
+        display: inline-block;
+        overflow-wrap: break-word; }
       .expense-box__items-1--value {
+        max-width: 45%;
         transition: all 0.4s; }
       .expense-box__items-1--delete {
         position: absolute;
@@ -309,3 +321,11 @@ body {
         transform: translateX(-3rem); }
       .expense-box__items-1:hover .expense-box__items-1--delete {
         opacity: 1; }
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }

@@ -56,11 +56,16 @@
 			padding: 0.5rem $padding-small;
 			font-size: 1.5rem;
 			border-radius: 0 $corner $corner 0;
+			animation: slide-up 0.4s ease;
 
 			&--description {
+				max-width: 50%;
+				display: inline-block;
+				overflow-wrap: break-word;
 			}
 
 			&--value {
+				max-width: 45%;
 				transition: all 0.4s;
 			}
 
@@ -365,11 +370,16 @@
 			padding: 0.5rem $padding-small;
 			font-size: 1.5rem;
 			border-radius: $corner 0 0 $corner;
+			animation: slide-up 0.4s ease;
 
 			&--description {
+				max-width: 50%;
+				display: inline-block;
+				overflow-wrap: break-word;
 			}
 
 			&--value {
+				max-width: 45%;
 				transition: all 0.4s;
 			}
 
@@ -397,3 +407,28 @@
 		}
 	}
 }
+
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(5rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// @keyframes fade-out {
+// 	0% {
+// 		opacity: 1;
+// 	}
+
+// 	100% {
+// 		opacity: 0;
+// 	}
+// }
+
+// .item-removed {
+// 	animation: fade-out 2s ease;
+// }
