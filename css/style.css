@@ -7,7 +7,7 @@ html {
   font-size: 10px; }
 
 input:focus {
-  border: 2px solid #aba5b4; }
+  border: 2px solid #eceaf1; }
 
 body {
   position: relative;
@@ -233,16 +233,20 @@ body {
       margin: 0 0 1rem 0;
       padding: 0.5rem 1rem;
       border-radius: 3rem;
-      border: 1px solid #aba5b4;
-      outline: none; }
+      border: 1px solid #2d429d;
+      outline: none;
+      color: #747091;
+      transition: all 0.3s; }
     .output-box__entry__input-value {
       flex-basis: 15%;
       font-size: 1.3rem;
       margin: 0 0 1rem 0;
       padding: 0.5rem 1rem;
       border-radius: 3rem;
-      border: 1px solid #aba5b4;
-      outline: none; }
+      border: 1px solid #2d429d;
+      outline: none;
+      color: #747091;
+      transition: all 0.3s; }
     .output-box__entry__submit {
       flex-basis: 15%;
       width: 30%;
@@ -329,3 +333,23 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+::placeholder {
+  color: #2d429d;
+  letter-spacing: 0.2rem;
+  opacity: 0.8;
+  font-weight: bold; }
+
+.income-highlight::placeholder {
+  color: #2d429d;
+  letter-spacing: 0.2rem;
+  opacity: 0.8;
+  font-weight: bold; }
+
+.expense-highlight {
+  border: 1px solid #ff8789; }
+  .expense-highlight::placeholder {
+    color: #dd3a3d;
+    letter-spacing: 0.2rem;
+    opacity: 0.8;
+    font-weight: bold; }

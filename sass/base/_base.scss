@@ -8,8 +8,10 @@ html {
 	font-size: 10px;
 }
 
-input:focus {
-	border: 2px solid $color-grey-medium;
+input {
+	&:focus {
+		border: 2px solid $color-grey-light;
+	}
 }
 
 body {

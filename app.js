@@ -134,8 +134,47 @@ var UIController = (function() {
 		container         : '.container'
 	};
 
+	// ----------------
+	var formatNumber = function(num, type) {
+		var numSplit, int, decimal;
+
+		/*
+			+ or - before number 
+			exaclty 2 decimal points
+			comma seperator
+			*/
+
+		num = Math.abs(num);
+		num = num.toFixed(2);
+
+		numSplit = num.split('.');
+
+		int = numSplit[0];
+		if (int.length > 3) {
+			int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, 3);
+		}
+		decimal = numSplit[1];
+
+		return (type === 'expense' ? '-' : '+') + ' ' + int + '.' + decimal;
+	};
+	// ----------------
+
 	document.querySelector(DOMStrings.currentDate).textContent = new Date().toLocaleDateString();
 
+	// ----------------
+	document.getElementById(DOMStrings.inputTypeIncome).addEventListener('change', function() {
+		document.querySelector('.' + DOMStrings.inputDescription).classList.remove('expense-highlight');
+		document.querySelector('.' + DOMStrings.inputDescription).classList.add('income-highlight');
+		document.querySelector('.' + DOMStrings.inputValue).classList.remove('expense-highlight');
+		document.querySelector('.' + DOMStrings.inputValue).classList.add('income-highlight');
+	});
+	document.getElementById(DOMStrings.inputTypeExpense).addEventListener('change', function() {
+		document.querySelector('.' + DOMStrings.inputDescription).classList.remove('income-highlight');
+		document.querySelector('.' + DOMStrings.inputDescription).classList.add('expense-highlight');
+		document.querySelector('.' + DOMStrings.inputValue).classList.remove('income-highlight');
+		document.querySelector('.' + DOMStrings.inputValue).classList.add('expense-highlight');
+	});
+	// ----------------
 	return {
 		// ----------------
 		getInput       : function() {
@@ -172,7 +211,7 @@ var UIController = (function() {
 			// replace placeholder with actual data
 			newHtml = html.replace('%id%', obj.id);
 			newHtml = newHtml.replace('%description%', obj.description);
-			newHtml = newHtml.replace('%value%', obj.value);
+			newHtml = newHtml.replace('%value%', formatNumber(obj.value, type));
 
 			// Insert the HTML into DOM
 			document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
@@ -182,7 +221,7 @@ var UIController = (function() {
 		// ----------------
 		deleteListItem : function(selectorID) {
 			var el = document.getElementById(selectorID);
-			el.classList.add ('.item-removed');
+			el.classList.add('.item-removed');
 			el.parentNode.removeChild(el);
 		},
 		// ----------------
@@ -208,19 +247,6 @@ var UIController = (function() {
 			document.querySelector(DOMStrings.totalBudgetLabel).textContent = obj.budget;
 			document.querySelector(DOMStrings.totalIncomeLabel).textContent = obj.totalIncome;
 			document.querySelector(DOMStrings.totalExpenseLabel).textContent = obj.totalExpense;
-		},
-		// ----------------
-
-		// ----------------
-		formatNumber: function(num, type) {
-			/*
-			+ or - before number 
-			exaclty 2 decimal points
-			comma seperator
-			*/
-
-			num = Math.abs(num);
-			num = num.toFixed(2);
 		},
 		// ----------------
 

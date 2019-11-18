@@ -287,8 +287,10 @@
 			margin: 0 0 1rem 0;
 			padding: 0.5rem 1rem;
 			border-radius: $corner;
-			border: 1px solid $color-grey-medium;
+			border: 1px solid $color-income;
 			outline: none;
+			color: $color-grey-dark;
+			transition: all 0.3s;
 		}
 
 		&__input-value {
@@ -297,8 +299,10 @@
 			margin: 0 0 1rem 0;
 			padding: 0.5rem 1rem;
 			border-radius: $corner;
-			border: 1px solid $color-grey-medium;
+			border: 1px solid $color-income;
 			outline: none;
+			color: $color-grey-dark;
+			transition: all 0.3s;
 		}
 
 		&__submit {
@@ -418,6 +422,35 @@
 		transform: translateY(0);
 	}
 }
+
+::placeholder {
+	color: $color-income;
+	letter-spacing: 0.2rem;
+	opacity: 0.8;
+	font-weight: bold;
+}
+.income-highlight {
+	&::placeholder {
+		color: $color-income;
+		letter-spacing: 0.2rem;
+		opacity: 0.8;
+		font-weight: bold;
+	}
+}
+.expense-highlight {
+	border: 1px solid $color-expense;
+	&::placeholder {
+		color: $color-expense-darkest;
+		letter-spacing: 0.2rem;
+		opacity: 0.8;
+		font-weight: bold;
+	}
+}
+
+// .expense-highlighted {
+// 	color: $color-expense !important;
+// 	background: green;
+// }
 
 // @keyframes fade-out {
 // 	0% {
